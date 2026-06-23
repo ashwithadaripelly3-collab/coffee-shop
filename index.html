@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brew Haven - Coffee Shop</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+    
+    /* Header */
+    header {
+      background: #2c1810;
+      color: white;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 1.8rem; font-weight: bold; color: #d4a574; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #d4a574; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200') center/cover;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 5%;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: #d4a574;
+      color: #2c1810;
+      padding: 15px 40px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #c19461;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(212,165,116,0.4);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 80px 5%;
+      background: #faf6f0;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #2c1810;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-10px); }
+    .feature-card .icon { font-size: 3rem; margin-bottom: 15px; }
+    .feature-card h3 { color: #2c1810; margin-bottom: 10px; }
+
+    /* Menu Section */
+    .menu {
+      padding: 80px 5%;
+      background: white;
+    }
+    .menu h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #2c1810;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .menu-item {
+      background: #faf6f0;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid #d4a574;
+      transition: all 0.3s;
+    }
+    .menu-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .menu-item h3 {
+      color: #2c1810;
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+    .menu-item p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .price {
+      color: #d4a574;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c1810;
+      color: white;
+      text-align: center;
+      padding: 40px 5%;
+    }
+    footer h3 { color: #d4a574; margin-bottom: 15px; }
+    .contact-info { margin: 20px 0; }
+    .social-links a {
+      color: #d4a574;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.2rem; }
+      nav { display: none; }
+      .features, .menu { padding: 50px 5%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">☕ Brew Haven</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Your Perfect Cup Awaits</h1>
+      <p>Freshly brewed coffee & cozy vibes in the heart of Khammam</p>
+      <a href="#menu" class="btn">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="about">
+    <h2>Why Choose Brew Haven?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">☕</div>
+        <h3>Premium Beans</h3>
+        <p>Sourced from the finest coffee estates across India. Freshly roasted daily.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🥐</div>
+        <h3>Fresh Bakes</h3>
+        <p>Delicious pastries, croissants & cakes baked fresh every morning.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🚚</div>
+        <h3>Home Delivery</h3>
+        <p>Get your favorite coffee delivered hot to your doorstep across Khammam.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <h2>Our Signature Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>☕ Espresso</h3>
+        <p>Strong & bold single shot</p>
+        <span class="price">₹80</span>
+      </div>
+      <div class="menu-item">
+        <h3>🥛 Cappuccino</h3>
+        <p>Espresso with steamed milk foam</p>
+        <span class="price">₹120</span>
+      </div>
+      <div class="menu-item">
+        <h3>🧊 Cold Brew</h3>
+        <p>Smooth, chilled & refreshing</p>
+        <span class="price">₹150</span>
+      </div>
+      <div class="menu-item">
+        <h3>🍫 Mocha Latte</h3>
+        <p>Coffee + chocolate = heaven</p>
+        <span class="price">₹140</span>
+      </div>
+      <div class="menu-item">
+        <h3>🥐 Croissant</h3>
+        <p>Buttery, flaky, fresh baked</p>
+        <span class="price">₹90</span>
+      </div>
+      <div class="menu-item">
+        <h3>🍰 Cheesecake</h3>
+        <p>New York style, creamy slice</p>
+        <span class="price">₹180</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <h3>Visit Us Today</h3>
+    <div class="contact-info">
+      <p>📍 Near Bus Stand, Khammam, Telangana</p>
+      <p>📞 +91 98765 43210 | ✉️ hello@brewhaven.com</p>
+      <p>⏰ Open Daily: 7:00 AM - 10:00 PM</p>
+    </div>
+    <div class="social-links">
+      <a href="#">📘</a>
+      <a href="#">📷</a>
+      <a href="#">🐦</a>
+    </div>
+    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+      © 2026 Brew Haven. All rights reserved.
+    </p>
+  </footer>
+</body>
+</html>
+
+
